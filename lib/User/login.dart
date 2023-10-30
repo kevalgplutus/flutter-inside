@@ -82,7 +82,7 @@ class _LoginState extends State<Login> {
                             // MaterialPageRoute(builder: (context) => const ForgotPasswordView()),
                             // MaterialPageRoute(builder: (context) => const ResetPasswordView()),
                             MaterialPageRoute(
-                                builder: (context) => const LeaveListView()),
+                                builder: (context) => const ForgotPasswordView()),
                           );
                         },
                       ),
@@ -105,21 +105,20 @@ class _LoginState extends State<Login> {
                     ],
                   ),
                 ),
-
-                // Row(
-                //   children: [
-                //     Expanded(child: Divider()),
-                //     Padding(
-                //       padding: const EdgeInsets.all(8.0),
-                //       child: Text('OR'),
-                //     ),
-                //     Expanded(child: Divider()),
-                //   ],
-                // ),
+                Row(
+                  children: [
+                    Expanded(child: Divider()),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text('OR'),
+                    ),
+                    Expanded(child: Divider()),
+                  ],
+                ),
               ],
             ),
           ),
-          Text('© 2023 Plutus Technologies Pvt.Ltd.'),
+          Text(kCopyRight),
         ],
       ),
     );
