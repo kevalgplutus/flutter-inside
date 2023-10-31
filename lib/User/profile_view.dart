@@ -18,7 +18,6 @@ class _ProfileViewState extends State<ProfileView> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.white,
-          automaticallyImplyLeading: false,
           title: Text(
             'Profile',
             style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
