@@ -44,6 +44,12 @@
       "languageVersion": "2.19"
     },
     {
+      "name": "dio",
+      "rootUri": "file:///Users/kevalg-plutus/.pub-cache/hosted/pub.dev/dio-5.3.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
       "name": "fake_async",
       "rootUri": "file:///Users/kevalg-plutus/.pub-cache/hosted/pub.dev/fake_async-1.3.1",
       "packageUri": "lib/",
@@ -82,6 +88,12 @@
     {
       "name": "fluttertoast",
       "rootUri": "file:///Users/kevalg-plutus/.pub-cache/hosted/pub.dev/fluttertoast-8.2.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "http_parser",
+      "rootUri": "file:///Users/kevalg-plutus/.pub-cache/hosted/pub.dev/http_parser-4.0.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -206,6 +218,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "typed_data",
+      "rootUri": "file:///Users/kevalg-plutus/.pub-cache/hosted/pub.dev/typed_data-1.3.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "vector_graphics",
       "rootUri": "file:///Users/kevalg-plutus/.pub-cache/hosted/pub.dev/vector_graphics-1.1.9",
       "packageUri": "lib/",
@@ -242,7 +260,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-10-30T12:18:52.535352Z",
+  "generated": "2023-10-30T13:55:38.193825Z",
   "generator": "pub",
   "generatorVersion": "3.0.6"
 }

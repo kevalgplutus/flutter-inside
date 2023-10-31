@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:inside/Home/HomeView.dart';
-import 'package:inside/Leaves/leave_list_view.dart';
 import 'package:inside/User/forgot_password_view.dart';
 import 'package:inside/User/profile_view.dart';
-import 'package:inside/User/reset_password_view.dart';
 import 'package:inside/Constants/Constants.dart';
-import '../Constants/Constants.dart';
 
-import '../Leaves/Filter/FilterView.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -79,15 +74,12 @@ class _LoginState extends State<Login> {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            // MaterialPageRoute(builder: (context) => const ForgotPasswordView()),
-                            // MaterialPageRoute(builder: (context) => const ResetPasswordView()),
                             MaterialPageRoute(
                                 builder: (context) => const ForgotPasswordView()),
                           );
                         },
                       ),
                       ElevatedButton(
-                        child: Text("Sign In"),
                         style: ElevatedButton.styleFrom(
                           primary: kPrimaryColors,
                           onPrimary: Colors.white,
@@ -101,15 +93,16 @@ class _LoginState extends State<Login> {
                             // MaterialPageRoute(builder: (context) => const HomeView()),
                           );
                         },
+                        child: Text("Sign In"),
                       )
                     ],
                   ),
                 ),
                 Row(
-                  children: [
+                  children: const [
                     Expanded(child: Divider()),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: EdgeInsets.all(8.0),
                       child: Text('OR'),
                     ),
                     Expanded(child: Divider()),

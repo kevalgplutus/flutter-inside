@@ -24,6 +24,7 @@ class _SettingsViewState extends State<SettingsView> {
         ),
         backgroundColor: Colors.white,
         body: ListView(
+
           padding: const EdgeInsets.all(8),
           children: <Widget>[
             row("Profile"),
@@ -32,6 +33,7 @@ class _SettingsViewState extends State<SettingsView> {
             row("Logout"),
           ],
         )
+
     );
   }
 }

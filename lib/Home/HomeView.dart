@@ -1,11 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:inside/Home/Dashboard.dart';
-import 'package:inside/Leaves/LeaveForm/ApplyLeaveView.dart';
 import 'package:inside/Leaves/leave_list_view.dart';
 import 'package:inside/Settings/SettingsView.dart';
-import 'package:inside/User/profile_view.dart';
-
 import '../Constants/Constants.dart';
 
 

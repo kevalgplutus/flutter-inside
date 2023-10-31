@@ -1,10 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:cupertino_icons/cupertino_icons.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:inside/Constants/Constants.dart';
-import '../Constants/Constants.dart';
 
 class ForgotPasswordView extends StatefulWidget {
   const ForgotPasswordView({super.key});
@@ -72,7 +70,7 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
                   ),
                   onPressed: () {
                     Fluttertoast.showToast(
-                        msg: "OTP sent successfully to your registered mobile number!",
+                        msg: txtOTPSent,
                         toastLength: Toast.LENGTH_LONG,
                         gravity: ToastGravity.BOTTOM,
                         backgroundColor: kPrimaryColors,

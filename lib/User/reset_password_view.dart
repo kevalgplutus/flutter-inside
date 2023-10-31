@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:inside/Constants/Constants.dart';
-import '../Constants/Constants.dart';
 
 class ResetPasswordView extends StatefulWidget {
   const ResetPasswordView({super.key});

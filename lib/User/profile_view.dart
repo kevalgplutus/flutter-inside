@@ -3,7 +3,6 @@ import "package:flutter/cupertino.dart";
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:inside/Constants/Constants.dart';
-import '../Constants/Constants.dart';
 
 class ProfileView extends StatefulWidget {
   const ProfileView({super.key});

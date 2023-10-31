@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:inside/Constants/Constants.dart';
-import '../Constants/Constants.dart';
+
 
 const List<String> list = <String>[
   'Keval Gajjar',
