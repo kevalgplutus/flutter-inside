@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		dpdqXTwVA89XGGzjGBAqoHsqWs0=
+		175kbbGzhzbeu1vVMNcHZEyV35g=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		n/bh76ybCdLS1QA1thyGYwgCLZ0=
+		WrAX4kigV+WzhldQdXdGK//RCYw=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
@@ -70,7 +70,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		QIqamer4ke0huqa2jXsIuV/2vvQ=
+		MavS6Bb2db1qkJ5QIbXOiIFWJCY=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/logoonly.svg</key>
 		<data>
@@ -86,7 +86,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		xIoR6U/6M5zklwUdI/zLCgcKUGc=
+		vVaoAYkBEUL3z0moEdoOvUa3OEc=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -196,6 +196,18 @@
 		<data>
 		nMTZkkm9uooDDa8A2YJSyK73oP8=
 		</data>
+		<key>Frameworks/Reachability.framework/Info.plist</key>
+		<data>
+		2STb8MQIVoVEup0pfobs8rdPUWo=
+		</data>
+		<key>Frameworks/Reachability.framework/Reachability</key>
+		<data>
+		e7562emUd7bmfTzS9+jHmDx4R3E=
+		</data>
+		<key>Frameworks/Reachability.framework/_CodeSignature/CodeResources</key>
+		<data>
+		94JkwlSUwPgIM20+nusK3CPdkXg=
+		</data>
 		<key>Frameworks/Toast.framework/Info.plist</key>
 		<data>
 		Z/oLJmC98y5hK2natEURbpZsEMw=
@@ -208,6 +220,18 @@
 		<data>
 		6jLAa0EoyQopacGOZfGO2pSXrbM=
 		</data>
+		<key>Frameworks/connectivity.framework/Info.plist</key>
+		<data>
+		3kRmnewxiaQ7k+vZOdH1eSegFNw=
+		</data>
+		<key>Frameworks/connectivity.framework/_CodeSignature/CodeResources</key>
+		<data>
+		Ow62GyGC1cBTY50XHJl3Tuyd+wg=
+		</data>
+		<key>Frameworks/connectivity.framework/connectivity</key>
+		<data>
+		jlUUVeUqNmddzHavd0yPlCAxkAI=
+		</data>
 		<key>Frameworks/fluttertoast.framework/Info.plist</key>
 		<data>
 		B7n1dsmU77H1dT5ZeK44Mxkli/g=
@@ -219,6 +243,18 @@
 		<key>Frameworks/fluttertoast.framework/fluttertoast</key>
 		<data>
 		R8Xr9MXFbi4Af/pQBqJYtHUNT2M=
+		</data>
+		<key>Frameworks/shared_preferences_foundation.framework/Info.plist</key>
+		<data>
+		swFyNjn8Mc/STlUOKvvieWbf2V0=
+		</data>
+		<key>Frameworks/shared_preferences_foundation.framework/_CodeSignature/CodeResources</key>
+		<data>
+		phk+JCPwBugtdzAoN68B2WUtTfs=
+		</data>
+		<key>Frameworks/shared_preferences_foundation.framework/shared_preferences_foundation</key>
+		<data>
+		ajTCFkviThsItqK4dU90T4B+Suk=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -305,7 +341,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			cCGEOu5jUmoxK/qoyiuyyZa+HgSwEK7hSV/lbelVz34=
+			zJjjyaomNkJu0gYYN0hu4iU4rUkGngfsHeMnrAkE7Fs=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -319,7 +355,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YKZy3KCvu7OykkF/9k4lKIERO+U/6HWZxwatvixxlG8=
+			7xVTS5dqTrT1KxyUFaEevfK7lgUH8Xl6PDAvKSFaZQE=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
@@ -347,7 +383,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7xTtftuG60JLAJVhFPFAQIGeHtV/+2uXyG3dJWpJcmg=
+			V5a/Qd6wX0/gBVsSymDvKjZc46asTISP2CEZET3qsG0=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/images/logoonly.svg</key>
@@ -375,7 +411,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8p0VJuAmAaE6kNyMUwfFy+FG7S0FAgY9uofzfFhkRTY=
+			qMXcIGcrzFN6EnEcRzNPGZSIhR8A0iRvO7nD1mz8JQA=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -567,6 +603,27 @@
 			rETMw/Yb9jC7IPuAQ9hs/kyJldBrRgCEQA20XXBJezA=
 			</data>
 		</dict>
+		<key>Frameworks/Reachability.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			OPjklaXX9oIBGI1sIQTGoHJ5/QmRIWTEYTFeoNW96DQ=
+			</data>
+		</dict>
+		<key>Frameworks/Reachability.framework/Reachability</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			SnxVlH5n+BeueZobZQO8nEVB+fNlvE3RANmJMSR3OLI=
+			</data>
+		</dict>
+		<key>Frameworks/Reachability.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			S2Wth3dzqE9/t0S+kETD7r+WtFSYamm8VVNlnRTbVtM=
+			</data>
+		</dict>
 		<key>Frameworks/Toast.framework/Info.plist</key>
 		<dict>
 			<key>hash2</key>
@@ -588,6 +645,27 @@
 			//PJ5sk+Iv8QgTS8CqmQASE9oLsF1BVO6Nt/s2zL92k=
 			</data>
 		</dict>
+		<key>Frameworks/connectivity.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			BzJX4gy8ytKQJsDkZTgpYEijhRgMRqHHp6jRFzsX3TA=
+			</data>
+		</dict>
+		<key>Frameworks/connectivity.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Sje7FOxOpBGJ8urHPmXABUja2/lg0JRJoTFIevcnLTw=
+			</data>
+		</dict>
+		<key>Frameworks/connectivity.framework/connectivity</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			wNdMJWN9TUr8H+0alUNJF1vUgKU9mWxI0Qf6hQzBjiE=
+			</data>
+		</dict>
 		<key>Frameworks/fluttertoast.framework/Info.plist</key>
 		<dict>
 			<key>hash2</key>
@@ -607,6 +685,27 @@
 			<key>hash2</key>
 			<data>
 			a0uW8R1deV+QhycfvoBzuCf0Uus6qzcJFsu5OePvhiM=
+			</data>
+		</dict>
+		<key>Frameworks/shared_preferences_foundation.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			zWjmAetLUZ06C+jpVErZDJYYm2x8ggnbybd5EKla3tQ=
+			</data>
+		</dict>
+		<key>Frameworks/shared_preferences_foundation.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			QYJeWVjoUjsB1u5kHwjVwC2DNF7hsBijxBOlA/kSfzU=
+			</data>
+		</dict>
+		<key>Frameworks/shared_preferences_foundation.framework/shared_preferences_foundation</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			TcVPbB36XWv4z/KmoGWwrz4WP8UB3OEyS86mS1zc6RQ=
 			</data>
 		</dict>
 	</dict>

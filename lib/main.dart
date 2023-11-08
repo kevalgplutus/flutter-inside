@@ -1,5 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:inside/Constants/Helpers.dart';
+import 'package:inside/Home/HomeView.dart';
 import 'package:inside/User/login.dart';
 
 void main() {
@@ -15,7 +19,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
@@ -32,23 +35,43 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  late bool userIsLoggedIn;
+
+  getLoggedInState() async {
+    await Helpers.getFullUserData().then((value) {
+      setState(() {
+        userIsLoggedIn = (value.data!.id!.isEmpty) ? false : true ;
+        Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => userIsLoggedIn != null && userIsLoggedIn
+                  ? HomeView()
+                  : Login(),
+            ));
+      });
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getLoggedInState();
+  }
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: Text("Login",
-          style: TextStyle(
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          title: Text(
+            "",
+            style: TextStyle(
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
-      ), backgroundColor: Colors.white,
-      body: const Center(
-        child: Login()
-      )
-    );
+        backgroundColor: Colors.white,
+        body: const Center(child: Login()));
   }
 }

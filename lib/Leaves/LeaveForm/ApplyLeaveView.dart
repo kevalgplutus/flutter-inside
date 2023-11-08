@@ -1,7 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:inside/Constants/Constants.dart';
-
+import 'package:intl/intl.dart';
 
 const List<String> list = <String>[
   'Keval Gajjar',
@@ -25,12 +27,13 @@ class ApplyLeaveView extends StatefulWidget {
 
 class _ApplyLeaveViewState extends State<ApplyLeaveView> {
   String dropdownValue = list.first;
+  TextEditingController dateFromInputController = TextEditingController();
+  TextEditingController dateToInputController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-
           title: Text(
             'Apply a Leave',
             style: TextStyle(
@@ -66,33 +69,46 @@ class _ApplyLeaveViewState extends State<ApplyLeaveView> {
                             color: kPrimaryColors),
                       ),
                       Container(
-                          child: DropdownButton(
-                        value: dropdownValue,
-                        icon: Icon(CupertinoIcons.chevron_down),
-                        iconSize: 16,
-                        elevation: 16,
-                        style: TextStyle(color: kPrimaryColors),
-                        underline: Container(
-                          height: 2,
-                          color: kPrimaryColors,
+                        padding: EdgeInsets.only(left: 8, right: 8),
+                        decoration: BoxDecoration(
+                          borderRadius: new BorderRadius.circular(10.0),
+                          border: Border.all(
+                            color: Colors.black54
+                          )
                         ),
-                        onChanged: (newValue) {
-                          setState(() {
-                            dropdownValue = newValue;
-                          });
-                        },
-                        items: list.map<DropdownMenuItem>((String value) {
-                          return DropdownMenuItem(
-                              value: value,
-                              child: Container(
-                                  height: 100,
-                                  width: MediaQuery.sizeOf(context).width *.50,
-                                  alignment: Alignment.centerLeft,
-                                  child: Text(value)));
-                        }).toList(),
-                      ))
+                        child: DropdownButton(
+                          value: dropdownValue,
+                          icon: Icon(CupertinoIcons.chevron_down),
+                          iconSize: 16,
+                          elevation: 0,
+                          style: TextStyle(color: kPrimaryColors),
+                          borderRadius: BorderRadius.circular(10),
+                          underline: Container(
+                            height: 0,
+                            color: kPrimaryColors,
+                          ),
+                          onChanged: (newValue) {
+                            setState(() {
+                              dropdownValue = newValue;
+                            });
+                          },
+                          items: list.map<DropdownMenuItem>((String value) {
+                            return DropdownMenuItem(
+                                value: value,
+                                child: Container(
+                                    height: 100,
+                                    width:
+                                        MediaQuery.sizeOf(context).width * .50,
+                                    alignment: Alignment.centerLeft,
+                                    child: Text(value)));
+                          }).toList(),
+                        ),
+                      )
                     ],
                   ),
+                ),
+                SizedBox(
+                  height: 20,
                 ),
                 _segmentLeaveTypes(),
                 SizedBox(
@@ -140,24 +156,46 @@ class _ApplyLeaveViewState extends State<ApplyLeaveView> {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: TextField(
-                            style: TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.normal),
-                            decoration: InputDecoration(
-                              hintText: "dd/mm/yyyy",
-                              border: InputBorder.none,
-                              suffixIconConstraints:
-                                  BoxConstraints(minHeight: 15, minWidth: 15),
-                              suffixIcon: Align(
-                                widthFactor: 0.5,
-                                heightFactor: 0.5,
-                                child: Icon(
-                                  CupertinoIcons.calendar,
+                              controller: dateFromInputController,
+                              style: TextStyle(
+                                  fontSize: 15, fontWeight: FontWeight.normal),
+                              decoration: InputDecoration(
+                                hintText: "dd/mm/yyyy",
+                                border: InputBorder.none,
+                                suffixIconConstraints:
+                                    BoxConstraints(minHeight: 15, minWidth: 15),
+                                suffixIcon: Align(
+                                  widthFactor: 0.5,
+                                  heightFactor: 0.5,
+                                  child: Icon(
+                                    CupertinoIcons.calendar,
+                                  ),
                                 ),
-                              ),
 
-                              // border: OutlineInputBorder(),
-                            ),
-                          ),
+                                // border: OutlineInputBorder(),
+                              ),
+                              readOnly: true,
+                              //set it true, so that user will not able to edit text
+                              onTap: () async {
+                                DateTime? pickedDate = await showDatePicker(
+                                    context: context,
+                                    initialDate: DateTime.now(),
+                                    firstDate: DateTime(2000),
+                                    //DateTime.now() - not to allow to choose before today.
+                                    lastDate: DateTime(2101));
+
+                                if (pickedDate != null) {
+                                  String formattedDate =
+                                      DateFormat('yyyy-MM-dd')
+                                          .format(pickedDate);
+                                  setState(() {
+                                    dateFromInputController.text =
+                                        formattedDate; //set output date to TextField value.
+                                  });
+                                } else {
+                                  log("Date is not selected");
+                                }
+                              }),
                         ),
                       ),
                       SizedBox(
@@ -173,17 +211,39 @@ class _ApplyLeaveViewState extends State<ApplyLeaveView> {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: TextField(
-                            style: TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.normal),
-                            textAlign: TextAlign.start,
-                            decoration: InputDecoration(
-                                border: InputBorder.none,
-                                hintText: "dd/mm/yyyy",
-                                suffixIconConstraints:
-                                    BoxConstraints(minHeight: 15, minWidth: 15),
-                                suffixIcon: Icon(CupertinoIcons.calendar)),
-                            textAlignVertical: TextAlignVertical.center,
-                          ),
+                              controller: dateToInputController,
+                              style: TextStyle(
+                                  fontSize: 15, fontWeight: FontWeight.normal),
+                              textAlign: TextAlign.start,
+                              decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  hintText: "dd/mm/yyyy",
+                                  suffixIconConstraints: BoxConstraints(
+                                      minHeight: 15, minWidth: 15),
+                                  suffixIcon: Icon(CupertinoIcons.calendar)),
+                              textAlignVertical: TextAlignVertical.center,
+                              readOnly: true,
+                              //set it true, so that user will not able to edit text
+                              onTap: () async {
+                                DateTime? pickedDate = await showDatePicker(
+                                    context: context,
+                                    initialDate: DateTime.now(),
+                                    firstDate: DateTime(2000),
+                                    //DateTime.now() - not to allow to choose before today.
+                                    lastDate: DateTime(2101));
+
+                                if (pickedDate != null) {
+                                  String formattedDate =
+                                      DateFormat('yyyy-MM-dd')
+                                          .format(pickedDate);
+                                  setState(() {
+                                    dateToInputController.text =
+                                        formattedDate; //set output date to TextField value.
+                                  });
+                                } else {
+                                  log("Date is not selected");
+                                }
+                              }),
                         ),
                       )
                     ],
@@ -257,13 +317,11 @@ class _ApplyLeaveViewState extends State<ApplyLeaveView> {
                       Expanded(
                           child: TextButton(
                               style: TextButton.styleFrom(
-                                textStyle: const TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black54
-                                ),
-                                alignment: Alignment.centerLeft
-                              ),
+                                  textStyle: const TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.black54),
+                                  alignment: Alignment.centerLeft),
                               onPressed: () {},
                               child: Text('Close'))),
                       ElevatedButton(
@@ -280,13 +338,13 @@ class _ApplyLeaveViewState extends State<ApplyLeaveView> {
                           elevation: 0,
                         ),
                         onPressed: () {},
-                        child: Text('Apply',
+                        child: Text(
+                          'Apply',
                           style: TextStyle(
-                            color: Colors.white,
-                            decorationColor: kPrimaryColors,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16
-                          ),
+                              color: Colors.white,
+                              decorationColor: kPrimaryColors,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16),
                         ),
                       )
                     ],
@@ -305,10 +363,22 @@ class _ApplyLeaveViewState extends State<ApplyLeaveView> {
         child: CupertinoSegmentedControl<int>(
           selectedColor: kPrimaryColors,
           borderColor: kPrimaryColors,
-          children: const {
-            0: Text('Planned'),
-            1: Text('Unplanned'),
-            2: Text('Compensation')
+          children: {
+            0: Container(
+              height: 35,
+              child: Text('Planned'),
+              alignment: Alignment.center
+            ),
+            1: Container(
+                height: 35,
+                child: Text('Unplanned'),
+                alignment: Alignment.center
+            ),
+            2: Container(
+                height: 35,
+                child: Text('Compensation'),
+                alignment: Alignment.center
+            )
           },
           onValueChanged: (int val) {
             setState(() {
@@ -326,9 +396,15 @@ class _ApplyLeaveViewState extends State<ApplyLeaveView> {
         child: CupertinoSegmentedControl<int>(
           selectedColor: kPrimaryColors,
           borderColor: kPrimaryColors,
-          children: const {
-            0: Text('Full Day'),
-            1: Text('Half Day')
+          children: {
+            0: Container(
+                height: 35,
+                alignment: Alignment.center,
+                child: Text('Full Day')),
+            1: Container(
+                height: 35,
+                alignment: Alignment.center,
+                child: Text('Half Day'))
           },
           onValueChanged: (int val) {
             setState(() {
@@ -340,14 +416,17 @@ class _ApplyLeaveViewState extends State<ApplyLeaveView> {
       );
 
   int segmentedFirstOrSecondControlValue = 0;
+
   Widget _segmentFirstOrSecondHalfDay() => Container(
         width: 190,
         child: CupertinoSegmentedControl<int>(
           selectedColor: kPrimaryColors,
           borderColor: kPrimaryColors,
-          children: const {
-            0: Text('First'),
-            1: Text('Second')
+          children: {
+            0: Container(
+                height: 35, alignment: Alignment.center, child: Text('First')),
+            1: Container(
+                height: 35, alignment: Alignment.center, child: Text('Second'))
           },
           onValueChanged: (int val) {
             setState(() {

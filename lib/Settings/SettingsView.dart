@@ -1,9 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:inside/Constants/Constants.dart';
+import 'package:inside/Constants/Helpers.dart';
 import 'package:inside/Settings/SettingsModel.dart';
 import 'package:inside/User/login.dart';
 import 'package:inside/User/profile_view.dart';
 import 'package:inside/User/reset_password_view.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingsView extends StatefulWidget {
   const SettingsView({super.key});
@@ -100,16 +103,16 @@ Future<void> _dialogBuilder(BuildContext context) {
     context: context,
     builder: (BuildContext context) {
       return AlertDialog(
-        title: const Text('Logout from the application?'),
+        title: const Text(txtLogoutForApplication),
         content: const Text(
-          'Are you sure, you want to logout from the application?',
+          txtLogoutDescription,
         ),
         actions: <Widget>[
           TextButton(
             style: TextButton.styleFrom(
               textStyle: Theme.of(context).textTheme.labelLarge,
             ),
-            child: const Text('No'),
+            child: const Text(txtNo),
             onPressed: () {
               Navigator.of(context).pop();
             },
@@ -118,8 +121,10 @@ Future<void> _dialogBuilder(BuildContext context) {
             style: TextButton.styleFrom(
               textStyle: Theme.of(context).textTheme.labelLarge,
             ),
-            child: const Text('Yes'),
-            onPressed: () {
+            child: const Text(txtYes),
+            onPressed: () async {
+
+              Helpers.removeDataFromSharedPrefference();
               Navigator.of(context).pushAndRemoveUntil(
                 // the new route
                 MaterialPageRoute(
